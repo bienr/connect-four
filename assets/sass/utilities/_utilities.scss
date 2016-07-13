@@ -1,0 +1,8 @@
+.d-iblock {
+	display: inline-block !important;
+}
+@for $i from 1 through 10 {
+	.m-spacer-#{$i} {
+		margin-top: $i * 10px;
+	}
+}
