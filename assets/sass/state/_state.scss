@@ -1,6 +1,7 @@
-.yellow {
-	background: url("../img/yellow.png") #3f7abc no-repeat !important;
-}
-.red {
-	background: url("../img/red.png") #3f7abc no-repeat !important;
+$colors: yellow red;
+
+@each $color in $colors {
+	.#{$color} {
+		background: url("../img/#{$color}.png") #3f7abc no-repeat !important;
+	}
 }

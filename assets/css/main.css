@@ -48,7 +48,7 @@ table#board td {
   text-align: center;
 }
 
-/* line 1, ../sass/state/_state.scss */
+/* line 4, ../sass/state/_state.scss */
 .yellow {
   background: url("../img/yellow.png") #3f7abc no-repeat !important;
 }
