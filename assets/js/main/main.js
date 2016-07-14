@@ -6,7 +6,7 @@
  * @copyright   (c) 2016, Bien Angelo Relucano
  * @author      bienr <bien.angelo.relucano@gmail.com>
  * @created     14 July 2016
- * @modified    14 July 2016
+ * @modified    15 July 2016
  */
  
  ;$(document).ready(function() {
@@ -15,7 +15,6 @@
 	var turn = "yellow", ctr = 0;
 	
 	$.Utilities.initDetails();
-		
 	$(".player-name").html(localStorage.getItem("player1"));
     
     $("#board td").click(function(e) {
