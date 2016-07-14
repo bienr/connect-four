@@ -9,18 +9,15 @@
  * @modified    14 July 2016
  */
  
- ;$(document).ready(function(){
+ ;$(document).ready(function() {
  
+	var state = $.Controller.initState();
 	var turn = "yellow";
     
     $("#board td").click(function() {
 		
 		$.Utilities.indicateTurn(turn);
 		
-		var state = $.Controller.initState();
-		// console.log(state);
-	
-		// Get column
 		var col = $(this).data("id").split("-")[1];
 		var board = $("#board");
 		
@@ -34,6 +31,12 @@
 			
 			if (!td.attr("class")) {
 				td.addClass("chips-" + turn);
+				
+				// Get current id
+				var r = id.split("-")[0], c = id.split("-")[1];
+				state[r][c] = turn == "yellow" ? 1 : 2;
+				console.log(state);
+				// Update value of current id of array state
 				break;
 			}
 		}
