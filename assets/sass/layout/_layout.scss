@@ -40,6 +40,7 @@ table#hover-board {
 table#board {
 	border: 10px solid #3f7abc;
 	border-collapse: collapse;
+	z-index: 1;
 	td {
 		@extend .chips-none;
 		background-color: #3f7abc;
@@ -49,4 +50,12 @@ table#board {
 		height: 80px;
 		cursor: pointer;
 	}
+}
+#board-overlay {
+	width: 100%;
+	margin-top: 86px;
+	height: 489px;
+	z-index: 2; 
+	background: rgba(0,0,0,0.2);
+	position: relative;
 }

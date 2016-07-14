@@ -29,6 +29,8 @@ $.extend(
 			declareWinner : function(w)
 			{
 				 console.log("Winner is: " + (w == 1 ? "Player 1 (Yellow)" : "Player 2 (Red)"));
+				 $("#board-overlay").removeClass();
+				 $("#board").css("marginTop", "-575px");
 				 $("#modal-winner").modal();
 			},
 			

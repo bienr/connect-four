@@ -31,7 +31,11 @@
 		
 			// Check if bottom cell has no chip yet	
 			if (!td.attr("class")) {
-				$.Utilities.animateColumn(id, turn);
+				
+				// Remove the floating chip
+				var hoverTd = $("#hover-board").find("td")[col];
+				$(hoverTd).removeClass();
+				
 				td.addClass("chips-" + turn);
 				
 				// Update state
