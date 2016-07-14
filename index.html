@@ -13,84 +13,143 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
 		<header>
 			<div class="container">
-				<h1 class="d-iblock">Connect Four Game | </h1>
-				<img src="assets/img/logo.png" class="d-iblock" alt="inDinero logo" />
+				<div class="row">
+					<h1 class="d-iblock"><strong>Connect</strong> Four | </h1>
+					<img src="assets/img/logo.png" class="d-iblock" alt="inDinero logo" />
+				</div>
 			</div>
 		</header>
 		<main>
 			<div class="container">
-				<div class="row m-spacer-2">
-					<div class="col-md-7">
-						<table id="board" class="table">
-							<tr>
-								<td data-id="0-0"></td>
-								<td data-id="0-1"></td>
-								<td data-id="0-2"></td>
-								<td data-id="0-3"></td>
-								<td data-id="0-4"></td>
-								<td data-id="0-5"></td>
-								<td data-id="0-6"></td>
-							</tr>
-							<tr>
-								<td data-id="1-0"></td>
-								<td data-id="1-1"></td>
-								<td data-id="1-2"></td>
-								<td data-id="1-3"></td>
-								<td data-id="1-4"></td>
-								<td data-id="1-5"></td>
-								<td data-id="1-6"></td>
-							</tr>
-							<tr>
-								<td data-id="2-0"></td>
-								<td data-id="2-1"></td>
-								<td data-id="2-2"></td>
-								<td data-id="2-3"></td>
-								<td data-id="2-4"></td>
-								<td data-id="2-5"></td>
-								<td data-id="2-6"></td>
-							</tr>
-							<tr>
-								<td data-id="3-0"></td>
-								<td data-id="3-1"></td>
-								<td data-id="3-2"></td>
-								<td data-id="3-3"></td>
-								<td data-id="3-4"></td>
-								<td data-id="3-5"></td>
-								<td data-id="3-6"></td>
-							</tr>
-							<tr>
-								<td data-id="4-0"></td>
-								<td data-id="4-1"></td>
-								<td data-id="4-2"></td>
-								<td data-id="4-3"></td>
-								<td data-id="4-4"></td>
-								<td data-id="4-5"></td>
-								<td data-id="4-6"></td>
-							</tr>
-							<tr>
-								<td data-id="5-0"></td>
-								<td data-id="5-1"></td>
-								<td data-id="5-2"></td>
-								<td data-id="5-3"></td>
-								<td data-id="5-4"></td>
-								<td data-id="5-5"></td>
-								<td data-id="5-6"></td>
-							</tr>
-						</table>
+				<div class="row m-spacer-1">
+					<div class="col-md-4">
+						<div class="turn-indicator">
+							<span id="indicator" class="chips-yellow guide">YELLOW</span>
+							<h3 id="h-turn" class="d-iblock"><strong><span class="player-name">Bien Angelo</span>'s Turn</strong></h3>
+							<h3 id="h-winner" class="d-iblock d-none"><strong>Winner: <span class="player-winner">Bien Angelo</span>!</strong></h3>
+						</div>
+						<div class="panel panel-info row m-spacer-1">
+							<div class="panel-heading">
+								<h3 class="panel-title">Enter Player Names</h3> 
+							</div> 
+							<div class="panel-body">
+								<div class="input-group">
+								  <span class="input-group-addon" id="basic-addon3">Player 1 (Y)</span>
+								  <input type="text" class="form-control" value="Bien Angelo" id="player-1" aria-describedby="basic-addon3">
+								</div>
+								<div class="input-group m-spacer-1">
+								  <span class="input-group-addon" id="basic-addon3">Player 2 (R)</span>
+								  <input type="text" class="form-control" value="inDinero" id="player-2" aria-describedby="basic-addon3">
+								</div>
+							</div> 
+						</div>
+						<div class="panel panel-success row m-spacer-2">
+							<div class="panel-heading">
+								<h3 class="panel-title">How to Play the Game</h3> 
+							</div> 
+							<div class="panel-body">The objective of the game is to connect four of one's own chips of the same color next to each other vertically, horizontally, or diagonally before your opponent. </div> 
+						</div>
+						<button type="button" class="new-game btn btn-default pull-right">New Game</button>
 					</div>
-					<div class="col-md-5">
-						<h4>TURN: Player <span id="indno">1</span></h4>
-						<span id="indicator" class="chips-yellow">YELLOW</span>
+					<div class="col-md-7">
+						<div id="board-overlay" class="hide"></div>
+						<div id="board-area">
+							<table id="hover-board" class="table">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+							<table id="board" class="table">
+								<tr>
+									<td data-id="0-0"></td>
+									<td data-id="0-1"></td>
+									<td data-id="0-2"></td>
+									<td data-id="0-3"></td>
+									<td data-id="0-4"></td>
+									<td data-id="0-5"></td>
+									<td data-id="0-6"></td>
+								</tr>
+								<tr>
+									<td data-id="1-0"></td>
+									<td data-id="1-1"></td>
+									<td data-id="1-2"></td>
+									<td data-id="1-3"></td>
+									<td data-id="1-4"></td>
+									<td data-id="1-5"></td>
+									<td data-id="1-6"></td>
+								</tr>
+								<tr>
+									<td data-id="2-0"></td>
+									<td data-id="2-1"></td>
+									<td data-id="2-2"></td>
+									<td data-id="2-3"></td>
+									<td data-id="2-4"></td>
+									<td data-id="2-5"></td>
+									<td data-id="2-6"></td>
+								</tr>
+								<tr>
+									<td data-id="3-0"></td>
+									<td data-id="3-1"></td>
+									<td data-id="3-2"></td>
+									<td data-id="3-3"></td>
+									<td data-id="3-4"></td>
+									<td data-id="3-5"></td>
+									<td data-id="3-6"></td>
+								</tr>
+								<tr>
+									<td data-id="4-0"></td>
+									<td data-id="4-1"></td>
+									<td data-id="4-2"></td>
+									<td data-id="4-3"></td>
+									<td data-id="4-4"></td>
+									<td data-id="4-5"></td>
+									<td data-id="4-6"></td>
+								</tr>
+								<tr>
+									<td data-id="5-0"></td>
+									<td data-id="5-1"></td>
+									<td data-id="5-2"></td>
+									<td data-id="5-3"></td>
+									<td data-id="5-4"></td>
+									<td data-id="5-5"></td>
+									<td data-id="5-6"></td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
 		</main>
+		<!-- Modal -->
+		<div class="modal fade" id="modal-winner" tabindex="-1" role="dialog" aria-labelledby="modal-winner-label">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"><strong>We have a Winner!</strong></h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="trophy text-center"><span class="d-iblock"></span></div>
+				<h3 class="text-center">Congratulations <strong><span class="player-winner">Player 1</span></strong> for connecting <br/>Four in a Row!</h3>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="new-game btn btn-primary">New Game</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="assets/js/vendor//bootstrap.min.js"></script>
 		<script src="assets/js/modules/utilities.js"></script>
 		<script src="assets/js/controller/controller.js"></script>
         <script src="assets/js/main/main.js"></script>

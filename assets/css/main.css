@@ -26,7 +26,7 @@ h1 {
 
 /* line 4, ../sass/layout/_layout.scss */
 header {
-  height: 70px;
+  height: 62px;
   background-color: #2a3137;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px;
@@ -36,19 +36,53 @@ header {
 header h1 {
   color: #fff;
   font-size: 28px;
+  letter-spacing: -1px;
+  margin-top: 15px;
 }
-/* line 12, ../sass/layout/_layout.scss */
+/* line 14, ../sass/layout/_layout.scss */
 header img {
   margin: -10px 0 0 10px;
 }
 
-/* line 17, ../sass/layout/_layout.scss */
-table#board {
-  margin-top: 15px;
-  border: 10px solid #3f7abc;
+/* line 18, ../sass/layout/_layout.scss */
+#indicator {
+  font-weight: bold;
+  font-size: 10px;
+  width: 80px;
+  height: 80px;
+  padding-top: 33px;
+  text-align: center;
+  background-color: transparent !important;
+  display: inline-block !important;
+  margin-left: -25px;
+}
+/* line 28, ../sass/layout/_layout.scss */
+#indicator.chips-red {
+  color: #fff;
+}
+
+/* line 32, ../sass/layout/_layout.scss */
+table#hover-board {
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  margin-bottom: 5px !important;
   border-collapse: collapse;
 }
-/* line 21, ../sass/layout/_layout.scss */
+/* line 37, ../sass/layout/_layout.scss */
+table#hover-board td {
+  width: 80px;
+  height: 85px;
+  display: table-cell;
+  border-top: 1px solid #fff;
+}
+
+/* line 44, ../sass/layout/_layout.scss */
+table#board {
+  border: 10px solid #3f7abc;
+  border-collapse: collapse;
+  z-index: 1;
+}
+/* line 48, ../sass/layout/_layout.scss */
 table#board td {
   background-color: #3f7abc;
   display: table-cell;
@@ -58,28 +92,64 @@ table#board td {
   cursor: pointer;
 }
 
-/* line 31, ../sass/layout/_layout.scss */
-#indicator {
-  display: table-cell;
-  font-weight: bold;
-  font-size: 10px;
-  width: 80px;
-  height: 80px;
-  vertical-align: middle;
-  text-align: center;
-  background-color: transparent !important;
-}
-/* line 40, ../sass/layout/_layout.scss */
-#indicator.chips-red {
-  color: #fff;
+/* line 58, ../sass/layout/_layout.scss */
+#board-overlay {
+  width: 100%;
+  margin-top: 86px;
+  height: 489px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-/* line 1, ../sass/state/_state.scss */
+/* line 66, ../sass/layout/_layout.scss */
+.new-game {
+  margin-right: -15px;
+  padding: 8px 0;
+  width: 180px;
+}
+
+/* line 71, ../sass/layout/_layout.scss */
+.guide {
+  display: inline-block !important;
+  margin-left: -25px;
+}
+
+/* line 75, ../sass/layout/_layout.scss */
+.trophy span {
+  background: url("../img/trophy.png") no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+/* line 1, ../sass/override/_override.scss */
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+
+/* line 6, ../sass/override/_override.scss */
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+/* line 14, ../sass/override/_override.scss */
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* line 19, ../sass/override/_override.scss */
 .chips-red {
   background-position: 0 -80px !important;
 }
 
-/* line 4, ../sass/state/_state.scss */
+/* line 22, ../sass/override/_override.scss */
 .chips-yellow {
   background-position: 0 -160px !important;
 }
@@ -89,52 +159,57 @@ table#board td {
   display: inline-block !important;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 4, ../sass/utilities/_utilities.scss */
+.d-none {
+  display: none !important;
+}
+
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-1 {
   margin-top: 10px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-2 {
   margin-top: 20px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-3 {
   margin-top: 30px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-4 {
   margin-top: 40px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-5 {
   margin-top: 50px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-6 {
   margin-top: 60px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-7 {
   margin-top: 70px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-8 {
   margin-top: 80px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-9 {
   margin-top: 90px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-10 {
   margin-top: 100px;
 }
