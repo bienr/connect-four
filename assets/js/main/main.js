@@ -16,6 +16,9 @@
     $("#board td").click(function() {
 		
 		$.Utilities.indicateTurn(turn);
+		
+		var state = $.Controller.initState();
+		// console.log(state);
 	
 		// Get column
 		var col = $(this).data("id").split("-")[1];
