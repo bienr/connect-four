@@ -2,30 +2,17 @@
 @include all-chips-sprites;
 
 header {
-	height: 70px;
+	height: 62px;
 	background-color: #2a3137;
 	@include box-shadow(rgba(0, 0, 0, 0.2) 0 3px 8px);
 	h1 {
 		color: #fff;
 		font-size: 28px;
+		letter-spacing: -1px;
+		margin-top: 15px;
 	}
 	img {
 		margin: -10px 0 0 10px;
-	}
-}
-
-table#board {
-	margin-top: 15px;
-	border: 10px solid #3f7abc;
-	border-collapse: collapse;
-	td {
-		@extend .chips-none;
-		background-color: #3f7abc;
-		display: table-cell;
-		border: none;
-		width: 80px;
-		height: 80px;
-		cursor: pointer;
 	}
 }
 #indicator {
@@ -39,5 +26,27 @@ table#board {
 	background-color: transparent !important;
 	&.chips-red {
 		color: #fff;
+	}
+}
+table#hover-board {
+	border-left: 10px solid #fff;
+	border-right: 10px solid #fff;
+	margin-bottom: 5px !important;
+	td {
+		@extend #indicator;
+		border-top: 1px solid #fff;
+	}
+}
+table#board {
+	border: 10px solid #3f7abc;
+	border-collapse: collapse;
+	td {
+		@extend .chips-none;
+		background-color: #3f7abc;
+		display: table-cell;
+		border: none;
+		width: 80px;
+		height: 80px;
+		cursor: pointer;
 	}
 }

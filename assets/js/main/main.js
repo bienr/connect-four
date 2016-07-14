@@ -24,13 +24,14 @@
 		
 		//console.log(col);
 		
-		// Check if bottom cell has no chip
 		for (i = 5; i >= 0; i-- ) {
 			//console.log(i);
 			var id = i + "-" + col;
 			var td = board.find("td[data-id='" + id + "']");
-			
+		
+			// Check if bottom cell has no chip yet	
 			if (!td.attr("class")) {
+				$.Utilities.animateColumn(id, turn);
 				td.addClass("chips-" + turn);
 				
 				// Update state
@@ -38,6 +39,7 @@
 				state[r][c] = turn == "yellow" ? 1 : 2;
 				//console.log(state);
 				
+				// Begin checking if chips are 6 or more
 				if (ctr > 5) {
 					var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
 							  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
@@ -51,5 +53,14 @@
 		
 		turn = $.Utilities.alternateTurn(turn);
 		ctr++;
+	}).hover(function() {
+		var col = $(this).data("id").split("-")[1];
+		$("#hover-board td").removeClass();
+		var cRow = $("#hover-board").find("td")[col];
+		$(cRow).addClass("chips-" + turn);
+	});
+	
+	$("#board-area").mouseout(function() {
+		$("#hover-board td").removeClass();
 	});
 });
