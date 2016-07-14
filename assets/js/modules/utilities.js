@@ -47,41 +47,6 @@ $.extend(
 				$("#h-turn").addClass("d-none");
 				$("#h-winner").removeClass("d-none");
 				$("#modal-winner").modal();
-			},
-			
-			resetGame : function() {
-				window.location.reload();
-				
-			},
-			
-			delay : function(ms)
-			{
-				var cur_d = new Date();
-				var cur_ticks = cur_d.getTime();
-				var ms_passed = 0;
-				while(ms_passed < ms) {
-					var d = new Date();
-					var ticks = d.getTime();
-					ms_passed = ticks - cur_ticks;
-					d = null;
-				}
-			},
-			
-			animateColumn : function(id, turn)
-			{
-				var row = id.split("-")[0], col = id.split("-")[1];
-				
-				// Remove the floating chip
-				var hoverTd = $("#hover-board").find("td")[col];
-				$(hoverTd).removeClass();
-				
-				// Add effect to upper cells
-				for ( r = 0; r < row; r++ ) {
-					var upperCell = $("#board").find("td[data-id='" + r + "-" + col + "']");
-					upperCell.addClass("chips-" + turn);
-					$.Utilities.delay(50);
-					upperCell.removeClass();
-				}
 			}
 		}
-}); // End of extend
+});

@@ -81,4 +81,4 @@ $.extend(
 				}
 			}
 		}
-}); // End of extend
+});
