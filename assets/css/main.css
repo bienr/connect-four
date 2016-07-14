@@ -103,15 +103,23 @@ table#board td {
 }
 
 /* line 66, ../sass/layout/_layout.scss */
-#new-game {
-  margin-left: -15px;
-  width: 150px;
+.new-game {
+  margin-right: -15px;
+  padding: 8px 0;
+  width: 180px;
 }
 
-/* line 70, ../sass/layout/_layout.scss */
+/* line 71, ../sass/layout/_layout.scss */
 .guide {
   display: inline-block !important;
   margin-left: -25px;
+}
+
+/* line 75, ../sass/layout/_layout.scss */
+.trophy span {
+  background: url("../img/trophy.png") no-repeat;
+  height: 150px;
+  width: 150px;
 }
 
 /* line 1, ../sass/override/_override.scss */
@@ -151,52 +159,57 @@ table#board td {
   display: inline-block !important;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 4, ../sass/utilities/_utilities.scss */
+.d-none {
+  display: none !important;
+}
+
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-1 {
   margin-top: 10px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-2 {
   margin-top: 20px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-3 {
   margin-top: 30px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-4 {
   margin-top: 40px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-5 {
   margin-top: 50px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-6 {
   margin-top: 60px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-7 {
   margin-top: 70px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-8 {
   margin-top: 80px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-9 {
   margin-top: 90px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 8, ../sass/utilities/_utilities.scss */
 .m-spacer-10 {
   margin-top: 100px;
 }

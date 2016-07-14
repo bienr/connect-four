@@ -63,11 +63,17 @@ table#board {
 	background: rgba(0,0,0,0.2);
 	position: relative;
 }
-#new-game {
-	margin-left: -15px;
-	width: 150px;
+.new-game {
+	margin-right: -15px;
+    padding: 8px 0;
+    width: 180px;
 }
 .guide {
 	display: inline-block !important;
 	margin-left: -25px;
+}
+.trophy span {
+	background: url("../img/trophy.png") no-repeat;
+	height: 150px;
+	width: 150px;
 }

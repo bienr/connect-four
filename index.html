@@ -25,8 +25,11 @@
 			<div class="container">
 				<div class="row m-spacer-1">
 					<div class="col-md-4">
-						<span id="indicator" class="chips-yellow guide">YELLOW</span>
-						<h3 class="d-iblock"><strong><span class="player-name">Bien Angelo</span>'s Turn</strong></h3>
+						<div class="turn-indicator">
+							<span id="indicator" class="chips-yellow guide">YELLOW</span>
+							<h3 id="h-turn" class="d-iblock"><strong><span class="player-name">Bien Angelo</span>'s Turn</strong></h3>
+							<h3 id="h-winner" class="d-iblock d-none"><strong>Winner: <span class="player-winner">Bien Angelo</span>!</strong></h3>
+						</div>
 						<div class="panel panel-info row m-spacer-1">
 							<div class="panel-heading">
 								<h3 class="panel-title">Enter Player Names</h3> 
@@ -48,7 +51,7 @@
 							</div> 
 							<div class="panel-body">The objective of the game is to connect four of one's own chips of the same color next to each other vertically, horizontally, or diagonally before your opponent. </div> 
 						</div>
-						<button type="button" id="new-game" class="btn btn-default pull-right">New Game</button>
+						<button type="button" class="new-game btn btn-default pull-right">New Game</button>
 					</div>
 					<div class="col-md-7">
 						<div id="board-overlay" class="hide"></div>
@@ -131,14 +134,15 @@
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
+				<h4 class="modal-title" id="myModalLabel"><strong>We have a Winner!</strong></h4>
 			  </div>
 			  <div class="modal-body">
-				<h3>We have a Winner: <span id="player-name">Player 1</span></h3>
+				<div class="trophy text-center"><span class="d-iblock"></span></div>
+				<h3 class="text-center">Congratulations <strong><span class="player-winner">Player 1</span></strong> for connecting <br/>Four in a Row!</h3>
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">New Game</button>
+				<button type="button" class="new-game btn btn-primary">New Game</button>
 			  </div>
 			</div>
 		  </div>

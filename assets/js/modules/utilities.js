@@ -13,25 +13,45 @@ $.extend(
 		// Utilities Namespace
 		Utilities :
 		{
+			initDetails : function() {
+				if (typeof(Storage) !== "undefined") {
+					localStorage.setItem("player1", $("#player-1").val());
+					localStorage.setItem("player2", $("#player-2").val());
+				}
+			},
+			
+			lockDetails : function() {
+				$("#player-1, #player-2").attr("readonly", "readonly");
+			},
+			
 			alternateTurn : function(turn)
 			{
 				turn = turn == "yellow" ? "red" : "yellow";
 				return turn;
 			},
 			
-			indicateTurn : function(turn, player1, player2)
+			indicateTurn : function(turn)
 			{
 				turn = $.Utilities.alternateTurn(turn);
 				$("#indicator").removeClass().addClass("chips-" + turn).html(turn.toString().toUpperCase());
-				$(".player-name").html(turn == "yellow" ? player1 : player2);
+				$(".player-name").html(turn == "yellow" ? localStorage.getItem("player1") : localStorage.getItem("player2"));
 			},
 			
 			declareWinner : function(w)
 			{
-				 console.log("Winner is: " + (w == 1 ? "Player 1 (Yellow)" : "Player 2 (Red)"));
-				 $("#board-overlay").removeClass();
-				 $("#board").css("marginTop", "-580px");
-				 $("#modal-winner").modal();
+				console.log("Winner is: " + (w == 1 ? "Player 1 (Yellow)" : "Player 2 (Red)"));
+				$("#board-overlay").removeClass();
+				$("#board").css("marginTop", "-580px");
+				$(".player-winner").html(w == 1 ? localStorage.getItem("player1") : localStorage.getItem("player2"));
+				$("#indicator").removeClass().addClass("chips-" + (w == 1 ? "yellow" : "red")).html((w == 1 ? "yellow" : "red").toString().toUpperCase());
+				$("#h-turn").addClass("d-none");
+				$("#h-winner").removeClass("d-none");
+				$("#modal-winner").modal();
+			},
+			
+			resetGame : function() {
+				window.location.reload();
+				
 			},
 			
 			delay : function(ms)
