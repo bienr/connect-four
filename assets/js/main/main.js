@@ -12,17 +12,19 @@
  ;$(document).ready(function() {
  
 	var state = $.Controller.initState();
-	var turn = "yellow";
-	var ctr = 0;
+	var turn = "yellow", ctr = 0;
+	
+	var player1 = $("#player-1").val(), 
+	    player2 = $("#player-2").val();
+		
+	$("#player-name").html(player1);
     
     $("#board td").click(function() {
 		
-		$.Utilities.indicateTurn(turn);
+		$.Utilities.indicateTurn(turn, player1, player2);
 		
 		var col = $(this).data("id").split("-")[1];
 		var board = $("#board");
-		
-		//console.log(col);
 		
 		for (i = 5; i >= 0; i-- ) {
 			//console.log(i);
@@ -41,7 +43,6 @@
 				// Update state
 				var r = id.split("-")[0], c = id.split("-")[1];
 				state[r][c] = turn == "yellow" ? 1 : 2;
-				//console.log(state);
 				
 				// Begin checking if chips are 6 or more
 				if (ctr > 5) {

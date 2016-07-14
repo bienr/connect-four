@@ -16,14 +16,15 @@ header {
 	}
 }
 #indicator {
-	display: table-cell;
 	font-weight: bold;
 	font-size: 10px;
 	width: 80px;
 	height: 80px;
-	vertical-align: middle;
+	padding-top: 33px;
 	text-align: center;
 	background-color: transparent !important;
+	display: inline-block !important;
+	margin-left: -25px;
 	&.chips-red {
 		color: #fff;
 	}
@@ -32,8 +33,11 @@ table#hover-board {
 	border-left: 10px solid #fff;
 	border-right: 10px solid #fff;
 	margin-bottom: 5px !important;
+	border-collapse: collapse;
 	td {
-		@extend #indicator;
+		width: 80px;
+		height: 85px;
+		display: table-cell;
 		border-top: 1px solid #fff;
 	}
 }
@@ -58,4 +62,12 @@ table#board {
 	z-index: 2; 
 	background: rgba(0,0,0,0.2);
 	position: relative;
+}
+#new-game {
+	margin-left: -15px;
+	width: 150px;
+}
+.guide {
+	display: inline-block !important;
+	margin-left: -25px;
 }

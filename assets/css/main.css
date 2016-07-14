@@ -45,39 +45,44 @@ header img {
 }
 
 /* line 18, ../sass/layout/_layout.scss */
-#indicator, table#hover-board td {
-  display: table-cell;
+#indicator {
   font-weight: bold;
   font-size: 10px;
   width: 80px;
   height: 80px;
-  vertical-align: middle;
+  padding-top: 33px;
   text-align: center;
   background-color: transparent !important;
+  display: inline-block !important;
+  margin-left: -25px;
 }
-/* line 27, ../sass/layout/_layout.scss */
-#indicator.chips-red, table#hover-board td.chips-red {
+/* line 28, ../sass/layout/_layout.scss */
+#indicator.chips-red {
   color: #fff;
 }
 
-/* line 31, ../sass/layout/_layout.scss */
+/* line 32, ../sass/layout/_layout.scss */
 table#hover-board {
   border-left: 10px solid #fff;
   border-right: 10px solid #fff;
   margin-bottom: 5px !important;
+  border-collapse: collapse;
 }
-/* line 35, ../sass/layout/_layout.scss */
+/* line 37, ../sass/layout/_layout.scss */
 table#hover-board td {
+  width: 80px;
+  height: 85px;
+  display: table-cell;
   border-top: 1px solid #fff;
 }
 
-/* line 40, ../sass/layout/_layout.scss */
+/* line 44, ../sass/layout/_layout.scss */
 table#board {
   border: 10px solid #3f7abc;
   border-collapse: collapse;
   z-index: 1;
 }
-/* line 44, ../sass/layout/_layout.scss */
+/* line 48, ../sass/layout/_layout.scss */
 table#board td {
   background-color: #3f7abc;
   display: table-cell;
@@ -87,7 +92,7 @@ table#board td {
   cursor: pointer;
 }
 
-/* line 54, ../sass/layout/_layout.scss */
+/* line 58, ../sass/layout/_layout.scss */
 #board-overlay {
   width: 100%;
   margin-top: 86px;
@@ -95,6 +100,18 @@ table#board td {
   z-index: 2;
   background: rgba(0, 0, 0, 0.2);
   position: relative;
+}
+
+/* line 66, ../sass/layout/_layout.scss */
+#new-game {
+  margin-left: -15px;
+  width: 150px;
+}
+
+/* line 70, ../sass/layout/_layout.scss */
+.guide {
+  display: inline-block !important;
+  margin-left: -25px;
 }
 
 /* line 1, ../sass/override/_override.scss */

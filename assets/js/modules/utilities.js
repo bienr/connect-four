@@ -19,18 +19,18 @@ $.extend(
 				return turn;
 			},
 			
-			indicateTurn : function(turn)
+			indicateTurn : function(turn, player1, player2)
 			{
 				turn = $.Utilities.alternateTurn(turn);
-				$("#indno").html(turn == "yellow" ? 1 : 2);
 				$("#indicator").removeClass().addClass("chips-" + turn).html(turn.toString().toUpperCase());
+				$(".player-name").html(turn == "yellow" ? player1 : player2);
 			},
 			
 			declareWinner : function(w)
 			{
 				 console.log("Winner is: " + (w == 1 ? "Player 1 (Yellow)" : "Player 2 (Red)"));
 				 $("#board-overlay").removeClass();
-				 $("#board").css("marginTop", "-575px");
+				 $("#board").css("marginTop", "-580px");
 				 $("#modal-winner").modal();
 			},
 			

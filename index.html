@@ -23,16 +23,32 @@
 		</header>
 		<main>
 			<div class="container">
-				<div class="row m-spacer-2">
-					<div class="col-md-3">
+				<div class="row m-spacer-1">
+					<div class="col-md-4">
+						<span id="indicator" class="chips-yellow guide">YELLOW</span>
+						<h3 class="d-iblock"><strong><span class="player-name">Bien Angelo</span>'s Turn</strong></h3>
+						<div class="panel panel-info row m-spacer-1">
+							<div class="panel-heading">
+								<h3 class="panel-title">Enter Player Names</h3> 
+							</div> 
+							<div class="panel-body">
+								<div class="input-group">
+								  <span class="input-group-addon" id="basic-addon3">Player 1 (Y)</span>
+								  <input type="text" class="form-control" value="Bien Angelo" id="player-1" aria-describedby="basic-addon3">
+								</div>
+								<div class="input-group m-spacer-1">
+								  <span class="input-group-addon" id="basic-addon3">Player 2 (R)</span>
+								  <input type="text" class="form-control" value="inDinero" id="player-2" aria-describedby="basic-addon3">
+								</div>
+							</div> 
+						</div>
 						<div class="panel panel-success row m-spacer-2">
 							<div class="panel-heading">
 								<h3 class="panel-title">How to Play the Game</h3> 
 							</div> 
-							<div class="panel-body">The objective of the game is to connect four of one's own discs or chips of the same color next to each other vertically, horizontally, or diagonally before your opponent. </div> 
+							<div class="panel-body">The objective of the game is to connect four of one's own chips of the same color next to each other vertically, horizontally, or diagonally before your opponent. </div> 
 						</div>
-						<h4>TURN: Player <span id="indno">1</span></h4>
-						<span id="indicator" class="chips-yellow">YELLOW</span>
+						<button type="button" id="new-game" class="btn btn-default pull-right">New Game</button>
 					</div>
 					<div class="col-md-7">
 						<div id="board-overlay" class="hide"></div>
