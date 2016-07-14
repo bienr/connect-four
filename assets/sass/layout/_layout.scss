@@ -1,3 +1,6 @@
+@import "chips/*.png";
+@include all-chips-sprites;
+
 header {
 	height: 70px;
 	background-color: #2a3137;
@@ -16,7 +19,8 @@ table#board {
 	border: 10px solid #3f7abc;
 	border-collapse: collapse;
 	td {
-		background: #3f7abc url("../img/none.png") no-repeat;
+		@extend .chips-none;
+		background-color: #3f7abc;
 		display: table-cell;
 		border: none;
 		width: 80px;
@@ -32,4 +36,8 @@ table#board {
 	height: 80px;
 	vertical-align: middle;
 	text-align: center;
+	background-color: transparent !important;
+	&.chips-red {
+		color: #fff;
+	}
 }

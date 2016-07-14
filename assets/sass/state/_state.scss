@@ -1,7 +1,6 @@
-$colors: yellow red;
-
-@each $color in $colors {
-	.#{$color} {
-		background: url("../img/#{$color}.png") #3f7abc no-repeat !important;
-	}
+.chips-red {
+  background-position: 0 -80px !important;
+}
+.chips-yellow {
+  background-position: 0 -160px !important;
 }

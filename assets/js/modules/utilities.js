@@ -17,6 +17,13 @@ $.extend(
 			{
 				turn = turn == "yellow" ? "red" : "yellow";
 				return turn;
+			},
+			
+			indicateTurn : function(turn)
+			{
+				turn = $.Utilities.alternateTurn(turn);
+				$("#indno").html(turn == "yellow" ? 1 : 2);
+				$("#indicator").removeClass().addClass("chips-" + turn).html(turn.toString().toUpperCase());
 			}
 		}
 }); // End of extend

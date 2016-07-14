@@ -11,11 +11,11 @@
  
  ;$(document).ready(function(){
  
-	var turn = "red";
+	var turn = "yellow";
     
     $("#board td").click(function() {
-	
-		turn = $.Utilities.alternateTurn(turn);
+		
+		$.Utilities.indicateTurn(turn);
 	
 		// Get column
 		var col = $(this).data("id").split("-")[1];
@@ -30,11 +30,12 @@
 			var td = board.find("td[data-id='" + id + "']");
 			
 			if (!td.attr("class")) {
-				td.addClass(turn);
+				td.addClass("chips-" + turn);
 				break;
 			}
 		}
 		
+		turn = $.Utilities.alternateTurn(turn);
 		
 	});
     
