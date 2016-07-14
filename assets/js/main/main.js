@@ -38,12 +38,13 @@
 				state[r][c] = turn == "yellow" ? 1 : 2;
 				//console.log(state);
 				
-				var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
-						  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
-				if (winner != undefined) {
-					$.Utilities.declareWinner(winner);
+				if (ctr > 5) {
+					var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
+							  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
+					if (winner != undefined) {
+						$.Utilities.declareWinner(winner);
+					}
 				}
-				
 				break;
 			}
 		}

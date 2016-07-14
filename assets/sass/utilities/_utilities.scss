@@ -1,6 +1,10 @@
 .d-iblock {
 	display: inline-block !important;
 }
+.d-center {
+	position: relative;
+	margin: 0 auto;
+}
 @for $i from 1 through 10 {
 	.m-spacer-#{$i} {
 		margin-top: $i * 10px;

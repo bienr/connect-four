@@ -89,52 +89,58 @@ table#board td {
   display: inline-block !important;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 4, ../sass/utilities/_utilities.scss */
+.d-center {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-1 {
   margin-top: 10px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-2 {
   margin-top: 20px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-3 {
   margin-top: 30px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-4 {
   margin-top: 40px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-5 {
   margin-top: 50px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-6 {
   margin-top: 60px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-7 {
   margin-top: 70px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-8 {
   margin-top: 80px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-9 {
   margin-top: 90px;
 }
 
-/* line 5, ../sass/utilities/_utilities.scss */
+/* line 9, ../sass/utilities/_utilities.scss */
 .m-spacer-10 {
   margin-top: 100px;
 }
