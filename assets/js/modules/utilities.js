@@ -24,6 +24,11 @@ $.extend(
 				turn = $.Utilities.alternateTurn(turn);
 				$("#indno").html(turn == "yellow" ? 1 : 2);
 				$("#indicator").removeClass().addClass("chips-" + turn).html(turn.toString().toUpperCase());
+			},
+			
+			declareWinner : function(w)
+			{
+				 console.log("Winner is: " + (w == 1 ? "Player 1 (Yellow)" : "Player 2 (Red)"));
 			}
 		}
 }); // End of extend

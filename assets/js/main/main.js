@@ -13,6 +13,7 @@
  
 	var state = $.Controller.initState();
 	var turn = "yellow";
+	var ctr = 0;
     
     $("#board td").click(function() {
 		
@@ -35,11 +36,19 @@
 				// Update state
 				var r = id.split("-")[0], c = id.split("-")[1];
 				state[r][c] = turn == "yellow" ? 1 : 2;
+				//console.log(state);
+				
+				var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
+						  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
+				if (winner != undefined) {
+					$.Utilities.declareWinner(winner);
+				}
+				
 				break;
 			}
 		}
 		
 		turn = $.Utilities.alternateTurn(turn);
-		
+		ctr++;
 	});
 });
