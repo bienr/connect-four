@@ -1,10 +1,16 @@
 .chips-sprite, .chips-none, table#board td, .chips-red, .chips-yellow { background-image: url('../img/chips-sc020fb49f7.png'); background-repeat: no-repeat; }
 
+.winner-sprite, .winner-tie, .winner-trophy { background-image: url('../img/winner-s3df79629b6.png'); background-repeat: no-repeat; }
+
 .chips-none, table#board td { background-position: 0 0; }
 
 .chips-red { background-position: 0 -80px; }
 
 .chips-yellow { background-position: 0 -160px; }
+
+.winner-tie { background-position: 0 0; }
+
+.winner-trophy { background-position: 0 -150px; }
 
 header { height: 62px; background-color: #2a3137; -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px; box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px; }
 header h1 { color: #fff; font-size: 28px; letter-spacing: -1px; margin-top: 15px; }
@@ -25,7 +31,7 @@ table#board td { background-color: #3f7abc; display: table-cell; border: none; w
 
 .guide { display: inline-block !important; margin-left: -25px; }
 
-.trophy span { background: url("../img/trophy.png") no-repeat; height: 150px; width: 150px; }
+span[class^="winner-"] { height: 150px; width: 150px; }
 
 .push-pad-right { padding-right: 30px; }
 
@@ -42,6 +48,8 @@ table#board td { background-color: #3f7abc; display: table-cell; border: none; w
 .d-iblock { display: inline-block !important; }
 
 .d-none { display: none !important; }
+
+.error { font-style: italic; font-size: 12px; color: #c13838; }
 
 .m-spacer-1 { margin-top: 10px; }
 

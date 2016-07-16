@@ -1,5 +1,7 @@
 @import "chips/*.png";
+@import "winner/*.png";
 @include all-chips-sprites;
+@include all-winner-sprites;
 
 header {
 	height: 62px;
@@ -72,8 +74,7 @@ table#board {
 	display: inline-block !important;
 	margin-left: -25px;
 }
-.trophy span {
-	background: url("../img/trophy.png") no-repeat;
+span[class^="winner-"] {
 	height: 150px;
 	width: 150px;
 }

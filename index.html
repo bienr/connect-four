@@ -29,19 +29,21 @@
 							<span id="indicator" class="chips-yellow guide">YELLOW</span>
 							<h3 id="h-turn" class="d-iblock"><strong><span class="player-name">Bien Angelo</span>'s Turn</strong></h3>
 							<h3 id="h-winner" class="d-iblock d-none"><strong>Winner: <span class="player-winner">Bien Angelo</span>!</strong></h3>
+							<h3 id="h-tie" class="d-iblock d-none"><strong>No Winner Yet...</strong></h3>
 						</div>
 						<div class="panel panel-info row m-spacer-1">
 							<div class="panel-heading">
 								<h3 class="panel-title">Enter Player Names</h3> 
 							</div> 
 							<div class="panel-body">
+								<p class="error text-center d-none">Please enter a valid name</p>
 								<div class="input-group">
-								  <span class="input-group-addon" id="basic-addon3">Player 1 (Y)</span>
-								  <input type="text" class="form-control" value="Bien Angelo" id="player-1" aria-describedby="basic-addon3">
+								  <span class="input-group-addon">Player 1 (Y)</span>
+								  <input type="text" class="form-control player-text" value="Bien Angelo" id="player-1">
 								</div>
 								<div class="input-group m-spacer-1">
-								  <span class="input-group-addon" id="basic-addon3">Player 2 (R)</span>
-								  <input type="text" class="form-control" value="inDinero" id="player-2" aria-describedby="basic-addon3">
+								  <span class="input-group-addon">Player 2 (R)</span>
+								  <input type="text" class="form-control player-text" value="inDinero" id="player-2">
 								</div>
 							</div> 
 						</div>
@@ -134,11 +136,12 @@
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><strong>We have a Winner!</strong></h4>
+				<h4 class="modal-title" id="winner-Label"><strong>We have a Winner!</strong></h4>
 			  </div>
 			  <div class="modal-body">
-				<div class="trophy text-center"><span class="d-iblock"></span></div>
-				<h3 class="text-center">Congratulations <strong><span class="player-winner">Player 1</span></strong> for connecting <br/>Four in a Row!</h3>
+				<div class="text-center"><span class="winner-trophy d-iblock"></span><span class="winner-tie d-iblock d-none"></span></div>
+				<h3 class="text-center" id="cap-winner">Congratulations <strong><span class="player-winner">Player 1</span></strong> for connecting <br/>Four in a Row!</h3>
+				<h3 class="text-center d-none" id="cap-tie">No winner yet between <br/><strong><span class="player-1"></strong> and <strong><span class="player-2"></strong>...</h3>
 			  </div>
 			  <div class="modal-footer push-pad-right">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
