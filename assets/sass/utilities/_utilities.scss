@@ -4,6 +4,11 @@
 .d-none {
 	display: none !important;
 }
+.error {
+	font-style: italic;
+	font-size: 12px;
+	color:  #c13838;
+}
 @for $i from 1 through 10 {
 	.m-spacer-#{$i} {
 		margin-top: $i * 10px;
