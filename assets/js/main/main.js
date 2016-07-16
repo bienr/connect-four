@@ -70,23 +70,6 @@
 		$("#hover-board td").removeClass();
 	});
 	
-	// $("#player-1").click(function() {
-		// localStorage.setItem("temp", this.value);
-	// }).on("keyup", function() {
-		// if (this.value == "") {
-			// console.log("Please enter a valid name");
-			// $(this).val(localStorage.getItem("temp"));
-		// }
-		// $(".player-name").html(this.value);
-		// localStorage.setItem("player1", this.value);
-	// });
-	
-	// $("#player-2").click(function() {
-		// localStorage.setItem("temp", this.value);
-	// }).on("keyup", function() {
-		// localStorage.setItem("player2", this.value);
-	// });
-	
 	$(".player-text").click(function() {
 		no = this.id.split("-")[1];
 		localStorage.setItem("temp" + no, this.value);
