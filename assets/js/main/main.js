@@ -19,46 +19,50 @@
     
     $("#board td").click(function(e) {
 		$.Utilities.lockDetails();
-		$.Utilities.indicateTurn(turn);
 		
 		var col = $(this).data("id").split("-")[1];
 		var board = $("#board");
-				
-		for (i = 5; i >= 0; i-- ) {
+		var topChip = board.find("td[data-id='" + 0 + "-" + col + "']").attr("class");
+		
+		// Check if top already has a chip
+		if (topChip === undefined) {
+			$.Utilities.indicateTurn(turn);
 			
-			var id = i + "-" + col;
-			var td = board.find("td[data-id='" + id + "']");
-			
-			// Check if bottom cell has no chip yet	
-			if (!td.attr("class")) {
-				// Indicate dropping of chip
-				var hoverTd = $("#hover-board").find("td")[col];
-				$(hoverTd).removeClass();
-				td.addClass("chips-" + turn);
+			for (i = 5; i >= 0; i-- ) {
+				var id = i + "-" + col;
+				var td = board.find("td[data-id='" + id + "']");
 				
-				// Update state
-				var r = id.split("-")[0], c = id.split("-")[1];
-				state[r][c] = turn == "yellow" ? 1 : 2;
-				
-				if (ctr > 5) {
-					var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
-							  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
-					if (winner != undefined) {
-						$.Utilities.declareWinner(winner);
-						e.stopPropagation();
+				// Check if bottom cell has no chip yet	
+				if (!td.attr("class")) {
+					// Indicate dropping of chip
+					var hoverTd = $("#hover-board").find("td")[col];
+					$(hoverTd).removeClass();
+					td.addClass("chips-" + turn);
+					
+					// Update state
+					var r = id.split("-")[0], c = id.split("-")[1];
+					state[r][c] = turn == "yellow" ? 1 : 2;
+					
+					if (ctr > 5) {
+						var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
+								  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
+						if (winner !== undefined) {
+							$.Utilities.declareWinner(winner);
+							e.stopPropagation();
+						}
 					}
+					break;
 				}
-				
-				break;
 			}
+			
+			if (ctr == 41) {
+				$.Utilities.declareTie();
+			}
+			
+			turn = $.Utilities.alternateTurn(turn);
+			ctr++;
 		}
 		
-		if (ctr == 41) {
-			$.Utilities.declareTie();
-		}
-		
-		turn = $.Utilities.alternateTurn(turn);
-		ctr++;
 	}).hover(function() {
 		var col = $(this).data("id").split("-")[1];
 		$("#hover-board td").removeClass();
