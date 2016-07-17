@@ -37,6 +37,14 @@ $.extend(
 				$(".player-name").html(turn == "yellow" ? localStorage.getItem("player1") : localStorage.getItem("player2"));
 			},
 			
+			hoverChip : function(obj, turn)
+			{
+				var col = $(obj).data("id").split("-")[1];
+				$("#hover-board td").removeClass();
+				var cRow = $("#hover-board").find("td")[col];
+				$(cRow).addClass("chips-" + turn);
+			},
+			
 			declareWinner : function(w)
 			{
 				$(".player-winner").html(w == 1 ? localStorage.getItem("player1") : localStorage.getItem("player2"));
@@ -62,7 +70,17 @@ $.extend(
 			{
 				$("#board-overlay").removeClass();
 				$("#board").css("marginTop", "-580px");
-				$("#modal-winner").modal();
+				setTimeout(function() {
+					$("#modal-winner").modal();
+				}, 800);
+			},
+			
+			markPattern : function(p1, p2, p3, p4)
+			{
+				$("[data-id='" + p1 + "'], [data-id='" + p2 + "'], [data-id='" + p3 + "'], [data-id='" + p4 + "']").html("<span class='chips-ztar'></span>");
+				setInterval(function() {
+					$('.chips-ztar').fadeOut(350).fadeIn(350);
+				}, 700);
 			}
 			
 		}
