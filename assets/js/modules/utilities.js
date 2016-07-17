@@ -43,7 +43,8 @@ $.extend(
 				$("#indicator").removeClass().addClass("chips-" + (w == 1 ? "yellow" : "red")).html((w == 1 ? "yellow" : "red").toString().toUpperCase());
 				$("#h-turn").addClass("d-none");
 				$("#h-winner").removeClass("d-none");
-				this.modalOverlay();
+				this.boardOverlay();
+				$("#modal-winner").modal();
 			},
 			
 			declareTie : function()
@@ -55,14 +56,14 @@ $.extend(
 				$(".winner-tie, #cap-tie, #h-tie").removeClass("d-none");
 				$("#indicator").removeClass().addClass("chips-none").html("TIE!");
 				$(".new-game").html("Play Again");
-				this.modalOverlay();
+				this.boardOverlay();
+				$("#modal-winner").modal();
 			},
 			
-			modalOverlay : function()
+			boardOverlay : function()
 			{
 				$("#board-overlay").removeClass();
 				$("#board").css("marginTop", "-580px");
-				$("#modal-winner").modal();
 			}
 			
 		}

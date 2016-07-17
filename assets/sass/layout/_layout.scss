@@ -68,7 +68,11 @@ table#board {
 .new-game {
 	margin-right: -15px;
     padding: 8px 0;
-    width: 180px;
+    width: 185px;
+}
+.ai-game {
+	@extend .new-game;
+	margin-left: -15px;
 }
 .guide {
 	display: inline-block !important;

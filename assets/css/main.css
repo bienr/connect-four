@@ -27,7 +27,9 @@ table#board td { background-color: #3f7abc; display: table-cell; border: none; w
 
 #board-overlay { width: 100%; margin-top: 86px; height: 489px; z-index: 2; background: rgba(0, 0, 0, 0.2); position: relative; }
 
-.new-game { margin-right: -15px; padding: 8px 0; width: 180px; }
+.new-game, .ai-game { margin-right: -15px; padding: 8px 0; width: 185px; }
+
+.ai-game { margin-left: -15px; }
 
 .guide { display: inline-block !important; margin-left: -25px; }
 

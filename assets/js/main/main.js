@@ -12,7 +12,7 @@
  ;$(document).ready(function() {
  
 	var state = $.Controller.initState();
-	var turn = "yellow", ctr = 0, no = 0;
+	var turn = "yellow", ctr = 0, no = 0, mode;
 	
 	$.Utilities.initDetails();
 	$(".player-name").html(localStorage.getItem("player1"));
@@ -23,9 +23,9 @@
 		
 		var col = $(this).data("id").split("-")[1];
 		var board = $("#board");
-				
+
 		for (i = 5; i >= 0; i-- ) {
-			
+		
 			var id = i + "-" + col;
 			var td = board.find("td[data-id='" + id + "']");
 			
@@ -40,6 +40,7 @@
 				var r = id.split("-")[0], c = id.split("-")[1];
 				state[r][c] = turn == "yellow" ? 1 : 2;
 				
+				// Only check when chips are enough to connect four
 				if (ctr > 5) {
 					var winner = $.Controller.checkVertical(state) || $.Controller.checkHorizontal(state)
 							  || $.Controller.checkRightDown(state) || $.Controller.checkRightUp(state);
@@ -52,18 +53,27 @@
 				break;
 			}
 		}
-		
+				
 		if (ctr == 41) {
 			$.Utilities.declareTie();
 		}
 		
 		turn = $.Utilities.alternateTurn(turn);
 		ctr++;
+		
 	}).hover(function() {
 		var col = $(this).data("id").split("-")[1];
 		$("#hover-board td").removeClass();
 		var cRow = $("#hover-board").find("td")[col];
 		$(cRow).addClass("chips-" + turn);
+	}).on("mouseup", function() {
+		mode = localStorage.getItem("mode");
+		if (mode == "ai") {
+			$.Utilities.lockDetails();
+			$.Utilities.indicateTurn(turn);
+			$.Utilities.boardOverlay();
+			$.AI.move(state);
+		}
 	});
 	
 	$("#board-area").mouseout(function() {
@@ -110,6 +120,15 @@
 	});
 	
 	$(".new-game").click(function() {
+		$("#player-2").val("inDinero");
+		localStorage.setItem("player2", "inDinero");
 		window.location.reload();
+	});
+	
+	$(".ai-game").click(function() {
+		$(".label-2").css({"background-color" : "#d9534f", "color" : "#fff"});
+		$("#player-2").val("CPU").attr("readonly", "readonly");
+		localStorage.setItem("mode", "ai");
+		localStorage.setItem("player2", "CPU");
 	});
 });
