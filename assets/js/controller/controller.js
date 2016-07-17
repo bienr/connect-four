@@ -33,6 +33,8 @@ $.extend(
 							state[r][c] == state[r + 1][c] &&
 							state[r][c] == state[r + 2][c] &&
 							state[r][c] == state[r + 3][c]) {
+							$.Utilities.markPattern(r + "-" + c, r + 1 + "-" + c, 
+													r + 2 + "-" + c, r + 3 + "-" + c);
 							return state[r][c];
 						}
 					}
@@ -47,6 +49,8 @@ $.extend(
 							state[r][c] == state[r][c + 1] &&
 							state[r][c] == state[r][c + 2] &&
 							state[r][c] == state[r][c + 3]) {
+							$.Utilities.markPattern(r + "-" + c, r + "-" + (c + 1), 
+													r + "-" + (c + 2), r + "-" + (c + 3));
 							return state[r][c];
 						}
 					}
@@ -61,6 +65,8 @@ $.extend(
 							state[r][c] == state[r + 1][c + 1] &&
 							state[r][c] == state[r + 2][c + 2] &&
 							state[r][c] == state[r + 3][c + 3]) {
+							$.Utilities.markPattern(r + "-" + c, r + 1 + "-" + (c + 1), 
+													r + 2 + "-" + (c + 2), r + 3 + "-" + (c + 3));
 							return state[r][c];
 						}
 					}
@@ -75,6 +81,8 @@ $.extend(
 							state[r][c] == state[r - 1][c + 1] &&
 							state[r][c] == state[r - 2][c + 2] &&
 							state[r][c] == state[r - 3][c + 3]) {
+							$.Utilities.markPattern(r + "-" + c, r - 1 + "-" + (c + 1), 
+													r - 2 + "-" + (c + 2), r - 3 + "-" + (c + 3));
 							return state[r][c];
 						}
 					}

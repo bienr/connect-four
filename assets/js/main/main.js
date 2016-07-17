@@ -64,10 +64,9 @@
 		}
 		
 	}).hover(function() {
-		var col = $(this).data("id").split("-")[1];
-		$("#hover-board td").removeClass();
-		var cRow = $("#hover-board").find("td")[col];
-		$(cRow).addClass("chips-" + turn);
+		$.Utilities.hoverChip(this, turn);
+	}).on("mouseup", function() {
+		$.Utilities.hoverChip(this, turn);
 	});
 	
 	$("#board-area").mouseout(function() {
