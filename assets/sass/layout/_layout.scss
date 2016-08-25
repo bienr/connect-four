@@ -44,12 +44,12 @@ table#hover-board {
 	}
 }
 table#board {
-	border: 10px solid #3f7abc;
+	border: 10px solid #4e9fa6;
 	border-collapse: collapse;
 	z-index: 1;
 	td {
 		@extend .chips-none;
-		background-color: #3f7abc;
+		background-color: #4e9fa6;
 		display: table-cell;
 		border: none;
 		width: 80px;
@@ -59,7 +59,7 @@ table#board {
 }
 #board-overlay {
 	width: 100%;
-	margin-top: 86px;
+	margin-top: 90px;
 	height: 489px;
 	z-index: 2; 
 	background: rgba(0, 0, 0, 0.1);
