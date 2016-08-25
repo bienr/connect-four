@@ -24,10 +24,10 @@ header img { margin: -10px 0 0 10px; }
 table#hover-board { border-left: 10px solid #fff; border-right: 10px solid #fff; margin-bottom: 5px !important; border-collapse: collapse; }
 table#hover-board td { width: 80px; height: 85px; display: table-cell; border-top: 1px solid #fff; }
 
-table#board { border: 10px solid #3f7abc; border-collapse: collapse; z-index: 1; }
-table#board td { background-color: #3f7abc; display: table-cell; border: none; width: 80px; height: 80px; cursor: pointer; }
+table#board { border: 10px solid #4e9fa6; border-collapse: collapse; z-index: 1; }
+table#board td { background-color: #4e9fa6; display: table-cell; border: none; width: 80px; height: 80px; cursor: pointer; }
 
-#board-overlay { width: 100%; margin-top: 86px; height: 489px; z-index: 2; background: rgba(0, 0, 0, 0.1); position: relative; }
+#board-overlay { width: 100%; margin-top: 90px; height: 489px; z-index: 2; background: rgba(0, 0, 0, 0.1); position: relative; }
 
 .new-game { margin-right: -15px; padding: 8px 0; width: 180px; }
 
